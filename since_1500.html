@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+
+<script type="text/javascript">
+
+
+function mostra(texto){
+
+	document.write(texto);
+
+}
+
+function pulaLinha(){
+
+	mostra("<br>");
+}
+
+var anoInicial = 1500;
+var anoFinal = 2021;
+var anosEntreGeracoes = 28;
+var totalAnos = anoFinal - anoInicial;
+var qtdeGeracoes = Math.round(totalAnos/anosEntreGeracoes);
+
+mostra("Se for verídica a hipótese citada, atualmente temos " + qtdeGeracoes + " gerações.");
+pulaLinha();
+</script>

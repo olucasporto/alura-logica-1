@@ -1,0 +1,40 @@
+<meta charset="UTF-8" />
+<script>
+  function pulaLinha() {
+    document.write('<br>')
+  }
+
+  function mostra(frase) {
+    document.write(frase)
+  }
+
+  var inicio = 20
+  var fim = 0
+  var atual = inicio
+  //var excluido1 = 33
+  //var excluido2 = 37
+
+  while (atual >= fim) {
+    if (atual == fim) {
+      mostra(
+        'e ' +
+          atual +
+          ' são os números que constam entre ' +
+          inicio +
+          ' e ' +
+          fim +
+          //' (excluindo aqui ' +
+          //excluido1 +
+          //' e ' +
+          //excluido2 +
+          //').' +
+          '. Fim!'
+      )
+    } else {
+      if (atual > fim) {
+        mostra(atual + ', ')
+      }
+    }
+    atual = atual - 1
+  }
+</script>

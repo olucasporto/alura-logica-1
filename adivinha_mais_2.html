@@ -1,0 +1,74 @@
+<meta charset="UTF-8" />
+
+<center>
+    <div><input /><br /><br /><button>Compare com o meu segredo</button></div>
+</center>
+
+<style>
+    div {
+        margin: 40vh;
+    }
+</style>
+
+<script>
+    var segredos = [5,7,10,2];
+
+    var search = 0
+
+    var maxTentativas = 3
+
+    var tentativa = 1
+
+    var input = document.querySelector('input')
+
+    input.focus()
+
+    function verifica() {
+
+        while (tentativa<=maxTentativas){
+
+            while (search <= segredos.length-1){
+
+                if (input.value == segredos[search]) {
+
+                    alert('Você ACERTOU!')
+
+                    break
+
+                } else {
+
+                    search++
+
+                }
+
+            }
+
+            if (search > segredos.length-1) {
+
+                alert("Infelizmente você errou... Você tem mais " + (maxTentativas - tentativa) + " tentativas...")
+
+                search = 0
+                tentativa++
+                input.value = ''
+                input.focus()
+
+                break
+
+            } else  {
+
+                search = 0
+                tentativa = 1
+                input.value = ''
+                input.focus()
+
+                alert('Parabéns! Que tal mais uma rodada?')
+
+                break
+            }
+
+
+        }
+    }
+    var button = document.querySelector('button')
+    button.onclick = verifica
+</script>

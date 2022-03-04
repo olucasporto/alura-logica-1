@@ -1,0 +1,75 @@
+<meta charset="UTF-8" />
+<script>
+  function sorteia(numero) {
+    return Math.round(Math.random() * numero)
+  }
+
+  var limite = 10
+  var limite2 = ' (DEZ)'
+
+  var numeroPensado = sorteia(limite)
+
+  var tentativas = 1
+
+  var maxTentativas = 3
+
+  while (tentativas <= maxTentativas) {
+    var chute = parseInt(
+      prompt(
+        'Já pensei. É um número de 1 a ' + limite + '. Qual você acha que é?'
+      )
+    )
+
+    if (chute > limite) {
+      chute = parseInt(
+        prompt(
+          'Esse número é maior do que ' +
+            limite +
+            ' brother, fala sério. Qual você acha que é de 1 (UM) A ' +
+            limite +
+            limite2 +
+            '????????'
+        )
+      )
+    }
+
+    if (chute == numeroPensado) {
+      alert('Uau! Você acertou, pois eu pensei no ' + numeroPensado)
+      document.write(
+        '<center><img src="vitoria.jpg" alt="Vitoria estrondosa"></center>'
+      )
+      break
+    } else {
+      if (tentativas == 1) {
+        alert(
+          'Seu ' +
+            tentativas +
+            'º chute foi ' +
+            chute +
+            ', essa não é a resposta certa.'
+        )
+      } else {
+        alert(
+          'Seu ' +
+            tentativas +
+            'º chute foi ' +
+            chute +
+            ', essa também não é a resposta certa.'
+        )
+      }
+    }
+
+    tentativas++
+  }
+
+  if (tentativas > maxTentativas) {
+    alert(
+      'Infelizmente você perdeu... Eu tinha pensado no número ' +
+        numeroPensado +
+        '. :('
+    )
+    document.write(
+      '<center><img src="fracasso.jpg" alt="Derrota amarga"></center>'
+    )
+  }
+</script>

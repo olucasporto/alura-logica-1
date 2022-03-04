@@ -1,0 +1,43 @@
+<meta charset="UTF-8" />
+
+<script>
+  function pulaLinha() {
+    document.write('<br>')
+    document.write('<br>')
+  }
+
+  function mostra(frase) {
+    document.write(frase)
+    pulaLinha()
+  }
+
+  var numero = 1
+  var qtdFamiliares = parseInt(prompt('Quantas pessoas tem na sua familia?'))
+
+  while (isNaN(qtdFamiliares)) {
+    qtdFamiliares = parseInt(
+      prompt('Quantidade não identificada. Favor digitar novamente.')
+    )
+  }
+
+  var totalIdades = 0
+
+  while (numero <= qtdFamiliares) {
+    var idade = parseInt(prompt('Informe a idade do familiar'))
+    while (isNaN(idade)) {
+      idade = parseInt(
+        prompt(
+          'Idade não identificada no nosso banco de dados. Favor digitar novamente.'
+        )
+      )
+    }
+    totalIdades = totalIdades + idade
+    numero++
+  }
+
+  var mediaIdades = totalIdades / qtdFamiliares
+
+  mostra('Você tem ' + qtdFamiliares + ' familiares.')
+  mostra('O total das idades é igual a ' + totalIdades)
+  mostra('A media das idades é igual a ' + mediaIdades)
+</script>

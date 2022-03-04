@@ -1,0 +1,37 @@
+<meta charset="UTF-8" />
+<script>
+  function pulaLinha() {
+    document.write('<br>')
+  }
+
+  function mostra(frase) {
+    document.write(frase)
+  }
+
+  function tipar(numero) {
+    return Math.round(numero)
+  }
+
+  var inicio = 0
+  var fim = 100
+  var atual = 1
+
+  while (atual <= fim) {
+    if (atual == fim) {
+      mostra(
+        'e ' +
+          atual +
+          ' são os números pares que constam entre ' +
+          inicio +
+          ' e ' +
+          fim +
+          '. Fim!'
+      )
+    } else {
+      if (tipar(atual / 2) == atual / 2) {
+        mostra(atual + ', ')
+      }
+    }
+    atual = atual + 1
+  }
+</script>

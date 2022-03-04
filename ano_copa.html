@@ -1,0 +1,31 @@
+<meta charset="UTF-8" />
+<script>
+  function pulaLinha() {
+    document.write('<br>')
+  }
+
+  function mostra(frase) {
+    document.write(frase)
+    pulaLinha()
+  }
+
+  var anoCopa = 1930
+  var limite = parseInt(prompt('Entre com a data limite'))
+  var qtdCopas = 0
+
+  while (anoCopa <= limite) {
+    qtdCopas = qtdCopas + 1
+    if (qtdCopas == 1) {
+      mostra('A primeira copa foi em ' + anoCopa + '.')
+    }
+    if (qtdCopas > 1 && anoCopa != 2018) {
+      mostra('Depois em ' + anoCopa + '.')
+    }
+    if (qtdCopas > 1 && anoCopa == 2018) {
+      mostra('E a última copa que tivemos foi em ' + anoCopa + '.')
+    }
+    anoCopa = anoCopa + 4
+  }
+
+  mostra('Até o ano de ' + limite + ' tivemos ' + qtdCopas + ' copas!')
+</script>
